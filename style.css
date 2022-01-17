@@ -1,3 +1,66 @@
-body {
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Parents and Common Styles */
+
+body, h1 {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
+}
+header {
+    align-items: center;
+    background-color: bisque;
+    display: flex;
+    height: 50px;
+    justify-content: space-around;
+}
+header > *, #close-menu {
+    font-size: 2em;
+}
+#menu-container, fieldset, #close-menu {
+    display: flex;
+}
+
+/* Menu Styles */
+
+#menu-container {
+    background-color: burlywood;
+    height: 100vh;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+}
+#menu {
+    padding: 25px 2.5%;
+    width: 80%;
+}
+legend {
+    font-size: large;
+    font-weight: 700;
+    padding: 0 10px;
+}
+fieldset {
+    border: 5px solid lightseagreen;
+    border-radius: 10px;
+}
+.resize, input {
+    width: 50%;
+}
+label, input {
+    display: inline-block;
+    font-weight: 500;
+    margin: 5px 0;
+}
+input {
+    border: 3px solid cornflowerblue;
+    border-radius: 5px;
+    outline: none;
+}
+#close-menu {
+    align-items: center;
+    height: 20vw;
+    justify-content: center;
+    width: 20%;
 }

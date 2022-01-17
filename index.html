@@ -6,8 +6,33 @@
     <meta name="author" content="Genuine Stalwart">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color the Grid</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b7ab9a1970.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <header>
+        <div id="hamburger"><i class="fas fa-bars"></i></div>
+        <h1>Color the Grid</h1>
+        <div id="mode"><i class="fas fa-adjust"></i></div>
+    </header>
+    <main>
+        <section id="menu-container">
+            <div id="menu">
+                <fieldset>
+                    <legend>Resize</legend>
+                    <div class="resize">
+                        <label for="column">Column</label><br>
+                        <input type="number" id="column" min="3" max="101">
+                    </div>
+                    <div class="resize">
+                        <label for="row">Row</label><br>
+                        <input type="number" id="row" min="3" max="101">
+                    </div>
+                </fieldset>
+            </div>
+            <div id="close-menu"><i class="fas fa-times"></i></div>
+        </section>
+    </main>
+    <footer></footer>
 </body>
 </html>
