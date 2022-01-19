@@ -1,38 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta data -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="Genuine Stalwart">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color the Grid</title>
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <!-- JS -->
     <script src="https://kit.fontawesome.com/b7ab9a1970.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <header>
-        <div id="hamburger"><i class="fas fa-bars"></i></div>
-        <h1>Color the Grid</h1>
-        <div id="mode"><i class="fas fa-adjust"></i></div>
+    <header class="d-flex align-items-center justify-content-between px-3 px-md-5">
+        <h1 class="m-0 fw-bolder">Color the Grid</h1>
+        <div><button id="download" class="btn fs-2 rounded-3" onclick=""><i class="fas fa-download"></i></button></div>
     </header>
-    <main>
-        <section id="menu-container">
-            <div id="menu">
-                <fieldset>
-                    <legend>Resize</legend>
-                    <div class="resize">
-                        <label for="column">Column</label><br>
-                        <input type="number" id="column" min="3" max="101">
+
+    <main class="d-md-flex">
+        <!-- Options -->
+        <section id="options-container">
+            <div id="inputs-container" class="container text-center">
+                <div class="row">
+                    <div class="col col-md-12">
+                        <label for="column" class="form-label">Column</label><br>
+                        <input type="number" value="10" id="column" class="d-inline rounded-3 p-0 form-control" min="3" max="101">
                     </div>
-                    <div class="resize">
-                        <label for="row">Row</label><br>
-                        <input type="number" id="row" min="3" max="101">
+                    <div class="col col-md-12">
+                        <label for="row" class="form-label">Row</label><br>
+                        <input type="number" value="10" id="row" class="d-inline rounded-3 p-0 form-control" min="3" max="101">
                     </div>
-                </fieldset>
+                    <div class="col col-md-12">
+                        <label for="color" class="form-label">Color</label><br>
+                        <input type="color" value="#000000" id="color" class="p-0 rounded-3">
+                    </div>
+                </div>
             </div>
-            <div id="close-menu"><i class="fas fa-times"></i></div>
+
+            <div id="buttons-container" class="container text-center">
+                <div class="row">
+                    <div class="col col-md-12">
+                        <button id="change" class="btn rounded-3" onclick="">Change</button>
+                    </div>
+                    <div class="col col-md-12">
+                        <button id="reset" class="btn rounded-3" onclick="">Reset</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contents -->
+        <section id="contents-container">
+            <div id="grid-container" class="table-responsive">
+                <table class="table mb-0 text-center">
+                    <!-- tr#grid-row-$*10>td#grid-col-$*10[onclick=""] -->
+                    <tr id="grid-row-1">
+                        <td id="grid-col-1" onclick=""></td>
+                        <td id="grid-col-2" onclick=""></td>
+                        <td id="grid-col-3" onclick=""></td>
+                        <td id="grid-col-4" onclick=""></td>
+                        <td id="grid-col-5" onclick=""></td>
+                        <td id="grid-col-6" onclick=""></td>
+                        <td id="grid-col-7" onclick=""></td>
+                        <td id="grid-col-8" onclick=""></td>
+                        <td id="grid-col-9" onclick=""></td>
+                        <td id="grid-col-10" onclick=""></td>
+                    </tr>
+                    <tr id="grid-row-2">
+                        <td id="grid-col-1" onclick=""></td>
+                        <td id="grid-col-2" onclick=""></td>
+                        <td id="grid-col-3" onclick=""></td>
+                        <td id="grid-col-4" onclick=""></td>
+                        <td id="grid-col-5" onclick=""></td>
+                        <td id="grid-col-6" onclick=""></td>
+                        <td id="grid-col-7" onclick=""></td>
+                        <td id="grid-col-8" onclick=""></td>
+                        <td id="grid-col-9" onclick=""></td>
+                        <td id="grid-col-10" onclick=""></td>
+                    </tr>
+                    <tr id="grid-row-3">
+                        <td id="grid-col-1" onclick=""></td>
+                        <td id="grid-col-2" onclick=""></td>
+                        <td id="grid-col-3" onclick=""></td>
+                        <td id="grid-col-4" onclick=""></td>
+                        <td id="grid-col-5" onclick=""></td>
+                        <td id="grid-col-6" onclick=""></td>
+                        <td id="grid-col-7" onclick=""></td>
+                        <td id="grid-col-8" onclick=""></td>
+                        <td id="grid-col-9" onclick=""></td>
+                        <td id="grid-col-10" onclick=""></td>
+                    </tr>
+                    <tr id="grid-row-4">
+                        <td id="grid-col-1" onclick=""></td>
+                        <td id="grid-col-2" onclick=""></td>
+                        <td id="grid-col-3" onclick=""></td>
+                        <td id="grid-col-4" onclick=""></td>
+                        <td id="grid-col-5" onclick=""></td>
+                        <td id="grid-col-6" onclick=""></td>
+                        <td id="grid-col-7" onclick=""></td>
+                        <td id="grid-col-8" onclick=""></td>
+                        <td id="grid-col-9" onclick=""></td>
+                        <td id="grid-col-10" onclick=""></td>
+                    </tr>
+                    <tr id="grid-row-5">
+                        <td id="grid-col-1" onclick=""></td>
+                        <td id="grid-col-2" onclick=""></td>
+                        <td id="grid-col-3" onclick=""></td>
+                        <td id="grid-col-4" onclick=""></td>
+                        <td id="grid-col-5" onclick=""></td>
+                        <td id="grid-col-6" onclick=""></td>
+                        <td id="grid-col-7" onclick=""></td>
+                        <td id="grid-col-8" onclick=""></td>
+                        <td id="grid-col-9" onclick=""></td>
+                        <td id="grid-col-10" onclick=""></td>
+                    </tr>
+                    <tr id="grid-row-6">
+                        <td id="grid-col-1" onclick=""></td>
+                        <td id="grid-col-2" onclick=""></td>
+                        <td id="grid-col-3" onclick=""></td>
+                        <td id="grid-col-4" onclick=""></td>
+                        <td id="grid-col-5" onclick=""></td>
+                        <td id="grid-col-6" onclick=""></td>
+                        <td id="grid-col-7" onclick=""></td>
+                        <td id="grid-col-8" onclick=""></td>
+                        <td id="grid-col-9" onclick=""></td>
+                        <td id="grid-col-10" onclick=""></td>
+                    </tr>
+                    <tr id="grid-row-7">
+                        <td id="grid-col-1" onclick=""></td>
+                        <td id="grid-col-2" onclick=""></td>
+                        <td id="grid-col-3" onclick=""></td>
+                        <td id="grid-col-4" onclick=""></td>
+                        <td id="grid-col-5" onclick=""></td>
+                        <td id="grid-col-6" onclick=""></td>
+                        <td id="grid-col-7" onclick=""></td>
+                        <td id="grid-col-8" onclick=""></td>
+                        <td id="grid-col-9" onclick=""></td>
+                        <td id="grid-col-10" onclick=""></td>
+                    </tr>
+                    <tr id="grid-row-8">
+                        <td id="grid-col-1" onclick=""></td>
+                        <td id="grid-col-2" onclick=""></td>
+                        <td id="grid-col-3" onclick=""></td>
+                        <td id="grid-col-4" onclick=""></td>
+                        <td id="grid-col-5" onclick=""></td>
+                        <td id="grid-col-6" onclick=""></td>
+                        <td id="grid-col-7" onclick=""></td>
+                        <td id="grid-col-8" onclick=""></td>
+                        <td id="grid-col-9" onclick=""></td>
+                        <td id="grid-col-10" onclick=""></td>
+                    </tr>
+                    <tr id="grid-row-9">
+                        <td id="grid-col-1" onclick=""></td>
+                        <td id="grid-col-2" onclick=""></td>
+                        <td id="grid-col-3" onclick=""></td>
+                        <td id="grid-col-4" onclick=""></td>
+                        <td id="grid-col-5" onclick=""></td>
+                        <td id="grid-col-6" onclick=""></td>
+                        <td id="grid-col-7" onclick=""></td>
+                        <td id="grid-col-8" onclick=""></td>
+                        <td id="grid-col-9" onclick=""></td>
+                        <td id="grid-col-10" onclick=""></td>
+                    </tr>
+                    <tr id="grid-row-10">
+                        <td id="grid-col-1" onclick=""></td>
+                        <td id="grid-col-2" onclick=""></td>
+                        <td id="grid-col-3" onclick=""></td>
+                        <td id="grid-col-4" onclick=""></td>
+                        <td id="grid-col-5" onclick=""></td>
+                        <td id="grid-col-6" onclick=""></td>
+                        <td id="grid-col-7" onclick=""></td>
+                        <td id="grid-col-8" onclick=""></td>
+                        <td id="grid-col-9" onclick=""></td>
+                        <td id="grid-col-10" onclick=""></td>
+                    </tr>
+                </table>
+            </div>
+
+            <article>
+                <h2>What to do here?</h2>
+                <ul class="m-0">
+                    <li>Write the number of columns and rows, select any color. Default is 10x10 and black.</li>
+                    <li>Click <span>Change</span> to apply the changes.</li>
+                    <li>Click <span>Reset</span> to reset the colors of the cells.</li>
+                    <li>Click <span><i class="fas fa-download"></i></span> to download the grid and save as an image.</li>
+                </ul>
+            </article>
         </section>
     </main>
-    <footer></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 </html>

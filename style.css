@@ -4,63 +4,95 @@
 
 /* Parents and Common Styles */
 
-body, h1 {
+body {
+    background-color: #00000D;
     font-family: 'Roboto', sans-serif;
+    font-weight: 500;
     margin: 0;
 }
+body, #change, #reset {
+    color: #FFFFFF;
+}
 header {
-    align-items: center;
-    background-color: bisque;
-    display: flex;
-    height: 50px;
-    justify-content: space-around;
+    background-color: #1E90FF;
+    height: 75px;
 }
-header > *, #close-menu {
-    font-size: 2em;
+h1 {
+    color: #000000;
 }
-#menu-container, fieldset, #close-menu {
-    display: flex;
+#download {
+    background-color: #383CC1;
+    color: #f2f2ff;
 }
 
-/* Menu Styles */
+/* Options Styles */
 
-#menu-container {
-    background-color: burlywood;
-    height: 100vh;
-    position: absolute;
-    text-align: center;
-    top: 0;
+#inputs-container, #buttons-container {
+    padding: 3%;
+}
+#column, #row, #color, #change, #reset {
+    border-width: 1px;
+    height: 2.5em;
+    width: 75%;
+}
+#change {
+    background-color: #4169E1;
+}
+#reset {
+    background-color: #DE4839;
+}
+
+/* Contents Styles */
+
+#grid-container {
+    background-color: #FFFFFF;;
+    border: 3px solid #6495ED;
+    border-radius: 8px;
+    height: 80vw;
+    margin: 5%;
+    width: 90%;
+}
+#grid-container > table {
+    height: 100%;
     width: 100%;
 }
-#menu {
-    padding: 25px 2.5%;
-    width: 80%;
+#grid-container td {
+    border: 1px solid #4169E1;
 }
-legend {
-    font-size: large;
-    font-weight: 700;
-    padding: 0 10px;
+article {
+    padding: 5%;
 }
-fieldset {
-    border: 5px solid lightseagreen;
-    border-radius: 10px;
+li {
+    margin: .75em 0;
 }
-.resize, input {
-    width: 50%;
-}
-label, input {
-    display: inline-block;
-    font-weight: 500;
-    margin: 5px 0;
-}
-input {
-    border: 3px solid cornflowerblue;
+span {
+    background-color: #191970;
     border-radius: 5px;
-    outline: none;
+    padding: 5px;
 }
-#close-menu {
-    align-items: center;
-    height: 20vw;
-    justify-content: center;
-    width: 20%;
+
+/* --------------- *\
+    Media Queries
+\* --------------- */
+
+@media only screen and (min-width: 768px) {
+    #options-container {
+        background-color: #120E43;
+        height: calc(100vh - 75px);
+        width: 25%;
+    }
+    #inputs-container, #buttons-container {
+        padding: 5%;
+    }
+    #inputs-container .col-md-12, #buttons-container .col-md-12 {
+        margin: 2.5% 0;
+    }
+    #contents-container {
+        height: calc(100vh - 75px);
+        overflow-y: scroll;
+        width: 75%;
+    }
+    #grid-container {
+        height: 67.5vw;
+    }
 }
