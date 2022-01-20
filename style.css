@@ -6,23 +6,21 @@
 
 body {
     background-color: #00000D;
+    color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     margin: 0;
-}
-body, #change, #reset {
-    color: #FFFFFF;
 }
 header {
     background-color: #1E90FF;
     height: 75px;
 }
-h1 {
+h1, #modal-ahem .modal-header, #modal-ahem .modal-body, #modal-ahem .modal-footer {
     color: #000000;
 }
 #download {
     background-color: #383CC1;
-    color: #f2f2ff;
+    color: #F2F2FF;
 }
 
 /* Options Styles */
@@ -46,18 +44,19 @@ h1 {
 
 #grid-container {
     background-color: #FFFFFF;;
-    border: 3px solid #6495ED;
+    border: 3px solid #1E90FF;
     border-radius: 8px;
-    height: 80vw;
+    height: 90vw;
     margin: 5%;
     width: 90%;
 }
 #grid-container > table {
+    color: #1E90FF;
     height: 100%;
     width: 100%;
 }
 #grid-container td {
-    border: 1px solid #4169E1;
+    border: 2px solid #1E90FF;
 }
 article {
     padding: 5%;
@@ -71,9 +70,7 @@ span {
     padding: 5px;
 }
 
-/* --------------- *\
-    Media Queries
-\* --------------- */
+/* Media Queries */
 
 @media only screen and (min-width: 768px) {
     #options-container {
