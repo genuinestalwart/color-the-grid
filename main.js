@@ -4,7 +4,21 @@ $(function() {
     for (let i = 1; i <= row; i++) {
         addCells(i);
     }
+    square();
 });
+
+function downloadImage() {
+    html2canvas(document.getElementById("grid-container")).then(function(canvas) {
+        let uri = canvas.toDataURL("image/png"), filename = "colorthegrid.png";
+        let link = document.createElement("a");
+        link.href = uri;
+        link.download = filename;
+        link.target = "_blank";
+        document.getElementsByTagName("article")[0].appendChild(link);
+        link.click();
+        document.getElementsByTagName("article")[0].removeChild(link);
+    });
+}
 
 function colorize(rowNumber, columnNumber) {
     $(`#grid-col-${rowNumber}-${columnNumber}`).css("background-color", color);
@@ -20,11 +34,9 @@ function resize(oldRow, oldColumn) {
     row = Number($("#row").val());
 
     if (column < 3 || column > 101 || row < 3 || row > 101) {
-        console.log(`column is ${column}, row is ${row}`);
         let modalAhem = new bootstrap.Modal($("#modal-ahem"));
         modalAhem.show();
     } else {
-        console.log(`column is ${column}, row is ${row}`);
         if (column < oldColumn) {
             for (let i = 1; i <= oldRow; i++) {
                 for (let j = column + 1; j <= oldColumn; j++) {
@@ -50,6 +62,7 @@ function resize(oldRow, oldColumn) {
                 addCells(i);
             }
         }
+        square();
     }
 }
 
@@ -68,4 +81,11 @@ function reset() {
             $(`#grid-col-${i}-${j}`).css("background-color", "#ffffff");
         }
     }
+}
+
+function square() {
+    let temp = $("#table-grid").css("width");
+    let width = Number(temp.slice(0, temp.length - 2));
+    let height = row * (width / column) + "px";
+    $("#table-grid").css("height", height);
 }
