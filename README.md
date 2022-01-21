@@ -14,6 +14,7 @@ Whenever I think of playing minecraft, one question always holds me off.
 > What would be the design of the thing that I'm going to build?
 
 I used to draw the designs in graph papers, but later I realized that it's just a waste of paper. So where else can I draw them? I searched for several apps like this in playstore. But none of them had the feature I wanted. Then I thought, why not make my own? After all, I am incredible :heart_on_fire:
+
 And thus, it came to reality. It took me only 5 days to completely build this project. So yeah, it's way more better than my first project from all angles (I think :thinking:).
 
 ## Resources
